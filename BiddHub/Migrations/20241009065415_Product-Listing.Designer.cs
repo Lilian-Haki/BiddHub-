@@ -4,6 +4,7 @@ using BiddHub.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BiddHub.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241009065415_Product-Listing")]
+    partial class ProductListing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,44 +99,6 @@ namespace BiddHub.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("BiddHub.Models.Listings.Documents", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Document_Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Document_Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductDocuments");
-                });
-
-            modelBuilder.Entity("BiddHub.Models.Listings.Photos", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Photos_Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductImages");
-                });
-
             modelBuilder.Entity("BiddHub.Models.Listings.Products", b =>
                 {
                     b.Property<int>("Id")
@@ -198,21 +163,21 @@ namespace BiddHub.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "009652b5-2c3c-4c09-b883-f255ea112192",
+                            Id = "f97f2cfa-a30b-4c83-a778-3707434f49e6",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "75001dde-b462-4b01-b1b0-af959f16f4d5",
+                            Id = "61c3e454-3df6-4788-ba70-71b2836ebc73",
                             ConcurrencyStamp = "2",
                             Name = "Bidder",
                             NormalizedName = "Bidder"
                         },
                         new
                         {
-                            Id = "5bed7738-4729-4a3b-8735-c6418cdc26d3",
+                            Id = "569c33ce-c76e-44c9-99e4-a04b333d4edd",
                             ConcurrencyStamp = "3",
                             Name = "Auctioneer",
                             NormalizedName = "Auctioneer"

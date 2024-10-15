@@ -4,6 +4,7 @@ using BiddHub.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BiddHub.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241014093138_clean")]
+    partial class clean
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -117,23 +120,6 @@ namespace BiddHub.Migrations
                     b.ToTable("ProductDocuments");
                 });
 
-            modelBuilder.Entity("BiddHub.Models.Listings.Photos", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Photos_Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductImages");
-                });
-
             modelBuilder.Entity("BiddHub.Models.Listings.Products", b =>
                 {
                     b.Property<int>("Id")
@@ -198,21 +184,21 @@ namespace BiddHub.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "009652b5-2c3c-4c09-b883-f255ea112192",
+                            Id = "393b126f-67d2-4b6b-9260-6ff29e24483b",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "75001dde-b462-4b01-b1b0-af959f16f4d5",
+                            Id = "67acc603-c3d7-4721-a7e7-6ee31abe956d",
                             ConcurrencyStamp = "2",
                             Name = "Bidder",
                             NormalizedName = "Bidder"
                         },
                         new
                         {
-                            Id = "5bed7738-4729-4a3b-8735-c6418cdc26d3",
+                            Id = "8ead28b0-8ff7-482c-9ed4-1d7a4da6b3ff",
                             ConcurrencyStamp = "3",
                             Name = "Auctioneer",
                             NormalizedName = "Auctioneer"

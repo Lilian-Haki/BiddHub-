@@ -4,6 +4,7 @@ using BiddHub.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BiddHub.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241014082318_ProductDocuments")]
+    partial class ProductDocuments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,21 +201,21 @@ namespace BiddHub.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "009652b5-2c3c-4c09-b883-f255ea112192",
+                            Id = "329d44da-c509-4154-bc43-eded2868ffc3",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "75001dde-b462-4b01-b1b0-af959f16f4d5",
+                            Id = "f83dce2b-8573-4ea4-b3e7-f899d266143a",
                             ConcurrencyStamp = "2",
                             Name = "Bidder",
                             NormalizedName = "Bidder"
                         },
                         new
                         {
-                            Id = "5bed7738-4729-4a3b-8735-c6418cdc26d3",
+                            Id = "9ef0e5aa-4eae-44ad-8ae8-7da6927d5ad6",
                             ConcurrencyStamp = "3",
                             Name = "Auctioneer",
                             NormalizedName = "Auctioneer"

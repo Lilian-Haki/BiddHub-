@@ -25,7 +25,6 @@ namespace BiddHub.Controllers
         private readonly SignInManager<RegisterUser> _signInManager;
         private readonly IEmailService _emailService;
         private readonly IConfiguration _configuration;
-        private static List<Products> products = new List<Products>();
 
         public EmailController(IEmailService emailService, UserManager<RegisterUser> userManager, SignInManager<RegisterUser> signInManager, IConfiguration configuration)//initialized and injected via constructor:
         {
@@ -35,57 +34,6 @@ namespace BiddHub.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost("filesupload")] //api/main/uploadFile
-        public IActionResult UploadFile(IFormFile file) {
-            return Ok(new UploadHandler().Upload(file));
-        }
-
-
-        // GET: api/products
-        //[HttpGet]
-        //public ActionResult<IEnumerable<Products>> GetProducts()
-        //{
-        //    return Ok(products);
-        //}
-
-        // GET: api/products/{id}
-        //[HttpGet("{id}")]
-        //public ActionResult<Products> GetProduct(int id)
-        //{
-        //    var product = products.FirstOrDefault(p => p.Id == id);
-        //    if (product == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(product);
-        //}
-
-        // POST: api/products
-        [HttpPost("Add-Products")]
-        public ActionResult<Products> AddProduct([FromBody] Products product)
-        {
-            product.Id = products.Count + 1; // Simple Id generation
-            products.Add(product);
-            return CreatedAtAction(/*nameof(GetProduct),*/ new { id = product.Id }, product);
-        }
-
-        private ActionResult<Products> CreatedAtAction(object value, Products product)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        //[HttpPost("send-otp")]
-        //public async Task<IActionResult> SendOtp([FromBody] EmailData emailData)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest("Invalid email data");
-        //    }
-
-        //    await _emailService.SendOtpEmailAsync(emailData);// Calling the method
-        //    return Ok("OTP sent successfully!");
-        //}
 
         // Registration Endpoint
         [HttpPost("register")]

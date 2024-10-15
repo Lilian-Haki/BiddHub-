@@ -1,6 +1,8 @@
 ﻿using BiddHub.Models.Authentication.Register;
+using BiddHub.Models.Listings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace BiddHub.Models
@@ -11,11 +13,7 @@ namespace BiddHub.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
-           protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            SeedRoles(builder);
-        }
+
         //Private method that adds few roles
         private static void SeedRoles(ModelBuilder builder)
         {
@@ -27,6 +25,16 @@ namespace BiddHub.Models
 
                 );
         }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<Photos> ProductImages { get; set; }
+        public DbSet<Documents> ProductDocuments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            SeedRoles(builder);
+        }
+
 
     }
     
