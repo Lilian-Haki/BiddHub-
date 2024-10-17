@@ -1,6 +1,0 @@
-@BiddHub_HostAddress = http://localhost:5282
-
-GET {{BiddHub_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
