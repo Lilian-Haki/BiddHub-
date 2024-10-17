@@ -15,7 +15,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.44.0" />
+=======
+>>>>>>> 1ea0da431fdd166dc405fdca00e787f18fb3e6c3
     <PackageReference Include="Microsoft.Data.SqlClient.SNI.runtime" Version="5.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
@@ -35,8 +38,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Uploads\images\" />
     <Folder Include="Uploads\documents\" />
+=======
+>>>>>>> 1ea0da431fdd166dc405fdca00e787f18fb3e6c3
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
